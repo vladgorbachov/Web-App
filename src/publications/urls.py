@@ -1,10 +1,11 @@
 from django.urls import path
-from accounts.views import get_profile, add_profile
+from publications import views
 
 app_name = 'publications'
 
 urlpatterns = [
-    # path('', get_profiles_list, name='list'),
-    path('add/', add_profile, name='add'),
-    path('show/<id>', get_profile, name='get'),
-]
+
+    path('add/', views.add_publication),
+    path('show/', views.publication_show),
+    path('show/<slug>', views.get_publication),
+    path('edit/<slug>', views.edit_publication)]

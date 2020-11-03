@@ -5,7 +5,6 @@ from django.dispatch import receiver
 from datetime import datetime
 
 
-# Create your models here.
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     bio = models.TextField(max_length=500, blank=True)
@@ -36,8 +35,6 @@ def save_user_profile(sender, instance, **kwargs):
 class Following(models.Model):
     profile_id = models.ForeignKey(Profile, related_name="following", on_delete=models.CASCADE)
     following_profile_id = models.ForeignKey(Profile, related_name="followers", on_delete=models.CASCADE)
-
-    # You can even add info about when user started following
     created = models.DateTimeField(auto_now_add=True)
 
 

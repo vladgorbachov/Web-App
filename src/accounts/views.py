@@ -3,10 +3,9 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.models import User
 from django.db.models import Q
-from django.http import HttpResponseRedirect, Http404
+from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
-
 from accounts.forms import ProfileAddForm, ProfileEditForm
 from accounts.models import Profile
 
@@ -17,6 +16,11 @@ class ProfilesListView(ListView):
     context_object_name = 'result'
 
     def get_queryset(self):
+
+        import time
+        import random
+        time.sleep(random.randint(1, 4))
+
         qs = super().get_queryset()
         search = self.request.GET.get('search')
         if search:
@@ -80,7 +84,7 @@ class UserDeleteView(LoginRequiredMixin, DeleteView):
         return super().post(request)
 
     def delete(self, request, *args, **kwargs):
-        self.object = self.get_object()
+        self.object = User.objects.get(profile_id=kwargs['item_id'])
         if self.request.user != self.object \
                 and not (self.request.user.groups.filter(name='admin_application').exists()):
             return self.handle_no_permission()

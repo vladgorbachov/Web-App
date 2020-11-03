@@ -1,0 +1,17 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+
+{% for image in img %}
+    <figure>
+    <figcaption>@{{ image.profile.nickname }}</figcaption>
+    <img class="publication"  src="{{image.contents.url}}"  alt="" />
+    <figcaption>{{ image.comments }}   {{ image.data }}</figcaption>
+    </figure>
+    <br>
+
+
+{% endfor %}
+
+{% endblock %}

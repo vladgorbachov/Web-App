@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from django.http import UnreadablePostError
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -39,10 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'django_extensions',
-    'custom_auth'
+    'custom_auth',
+    'core',
 ]
 
 MIDDLEWARE = [
+    'core.middlewares.PerformanceMonitoringMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -130,7 +133,62 @@ STATICFILES_DIRS = [
 
 LOGIN_REDIRECT_URL = '/profiles/'
 
-
 ADMIN_GROUP = 'admin_application'
+
 LOGIN_URL = '/account/login'
 LOGOUT_REDIRECT_URL = '/profiles/'
+MAX_RESPONSE_TIME = 2 #seconds
+LOG_RECORDS_COUNT = 20 #rows qty
+
+
+def skip_empty_description_post(description):
+    if description.exc_info:
+        exc_type, exc_value = description.exc_info[None]
+        if isinstance(exc_value, UnreadablePostError):
+            return False
+    return True
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        }
+    },
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+        'skip_empty_description_post': {
+            '()': 'django.utils.log.CallbackFilter',
+            'callback': skip_empty_description_post,
+        }
+    },
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'filters': ['require_debug_true'],
+            'class': 'logging.FileHandler',
+            'filename': 'info.log',
+            'formatter': 'verbose'
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['skip_empty_description_post'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
+
+
+
