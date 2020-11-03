@@ -1,0 +1,40 @@
+INFO 2020-11-03 19:48:40,811 autoreload 1044 6748 Watching for file changes with StatReloader
+INFO 2020-11-03 19:48:40,866 autoreload 5196 14504 Watching for file changes with StatReloader
+INFO 2020-11-03 19:48:40,868 autoreload 6344 8268 Watching for file changes with StatReloader
+INFO 2020-11-03 20:19:01,831 autoreload 6344 8268 C:\Users\volod\PycharmProjects\Web-App\src\accounts\views.py changed, reloading.
+INFO 2020-11-03 20:19:01,861 autoreload 1044 6748 C:\Users\volod\PycharmProjects\Web-App\src\accounts\views.py changed, reloading.
+INFO 2020-11-03 20:19:02,965 autoreload 18544 18524 Watching for file changes with StatReloader
+INFO 2020-11-03 20:19:03,055 autoreload 5196 14504 C:\Users\volod\PycharmProjects\Web-App\src\accounts\views.py changed, reloading.
+INFO 2020-11-03 20:19:04,076 autoreload 12896 18400 Watching for file changes with StatReloader
+INFO 2020-11-03 20:40:56,778 autoreload 12896 18400 C:\Users\volod\PycharmProjects\Web-App\src\app\settings.py changed, reloading.
+INFO 2020-11-03 20:40:56,803 autoreload 18544 18524 C:\Users\volod\PycharmProjects\Web-App\src\app\settings.py changed, reloading.
+INFO 2020-11-03 20:40:57,023 autoreload 6612 18124 C:\Users\volod\PycharmProjects\Web-App\src\app\settings.py changed, reloading.
+INFO 2020-11-03 20:40:57,867 autoreload 17932 9368 Watching for file changes with StatReloader
+INFO 2020-11-03 20:40:57,869 autoreload 17380 17240 Watching for file changes with StatReloader
+INFO 2020-11-03 20:40:58,084 autoreload 17504 18676 Watching for file changes with StatReloader
+INFO 2020-11-03 20:42:35,228 autoreload 17932 9368 C:\Users\volod\PycharmProjects\Web-App\src\app\settings.py changed, reloading.
+INFO 2020-11-03 20:42:35,244 autoreload 17504 18676 C:\Users\volod\PycharmProjects\Web-App\src\app\settings.py changed, reloading.
+INFO 2020-11-03 20:42:35,319 autoreload 17380 17240 C:\Users\volod\PycharmProjects\Web-App\src\app\settings.py changed, reloading.
+INFO 2020-11-03 20:42:36,245 autoreload 13404 2012 Watching for file changes with StatReloader
+INFO 2020-11-03 20:42:36,245 autoreload 8864 16156 Watching for file changes with StatReloader
+INFO 2020-11-03 20:42:36,272 autoreload 1332 13060 Watching for file changes with StatReloader
+INFO 2020-11-03 20:46:37,637 autoreload 8864 16156 C:\Users\volod\PycharmProjects\Web-App\src\app\settings.py changed, reloading.
+INFO 2020-11-03 20:46:37,700 autoreload 1332 13060 C:\Users\volod\PycharmProjects\Web-App\src\app\settings.py changed, reloading.
+INFO 2020-11-03 20:46:37,706 autoreload 13404 2012 C:\Users\volod\PycharmProjects\Web-App\src\app\settings.py changed, reloading.
+INFO 2020-11-03 20:46:38,847 autoreload 13020 18876 Watching for file changes with StatReloader
+INFO 2020-11-03 20:46:38,878 autoreload 8208 16580 Watching for file changes with StatReloader
+INFO 2020-11-03 20:46:38,885 autoreload 2128 3000 Watching for file changes with StatReloader
+WARNING 2020-11-03 20:47:45,632 log 13020 18076 Not Found: /publications/add
+WARNING 2020-11-03 20:47:45,632 basehttp 13020 18076 "GET /publications/add HTTP/1.1" 404 3068
+INFO 2020-11-03 20:52:27,455 basehttp 13020 18076 "GET / HTTP/1.1" 200 4832
+WARNING 2020-11-03 20:52:42,517 log 13020 18076 Not Found: /publications/add
+WARNING 2020-11-03 20:52:42,519 basehttp 13020 18076 "GET /publications/add HTTP/1.1" 404 3068
+INFO 2020-11-03 20:53:55,083 autoreload 13020 18876 C:\Users\volod\PycharmProjects\Web-App\src\app\settings.py changed, reloading.
+INFO 2020-11-03 20:53:55,090 autoreload 8208 16580 C:\Users\volod\PycharmProjects\Web-App\src\app\settings.py changed, reloading.
+INFO 2020-11-03 20:53:55,099 autoreload 2128 3000 C:\Users\volod\PycharmProjects\Web-App\src\app\settings.py changed, reloading.
+INFO 2020-11-03 20:53:56,081 autoreload 19128 14372 Watching for file changes with StatReloader
+INFO 2020-11-03 20:53:56,082 autoreload 5768 18788 Watching for file changes with StatReloader
+INFO 2020-11-03 20:53:56,083 autoreload 13228 19240 Watching for file changes with StatReloader
+INFO 2020-11-03 20:54:08,522 basehttp 13228 15000 "GET /show/49 HTTP/1.1" 200 629
+INFO 2020-11-03 21:01:19,434 autoreload 8712 10096 Watching for file changes with StatReloader
+INFO 2020-11-03 21:15:12,404 autoreload 19128 14372 C:\Users\volod\PycharmProjects\Web-App\src\manage.py changed, reloading.
